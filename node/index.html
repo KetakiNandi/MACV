@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>   
+  </head>
+<body>
+ 
+<!--<ul id="messages"></ul>-->
+<script>
+  var socket = io('http://localhost:3001');
+  socket.on('news', function (data) {
+    //console.log(data);
+    socket.emit('my other event', { my: data });
+     //$('#abc').text(data.text);
+     //data.forEach(obj => {
+       // console.log("Yer : " + obj.yer + ", Lat : " + obj.lat + ", Long : " + obj.lng);
+      // data=JSON.parse(data);
+       // $('#abc').text(data.Amount);
+   // })
+
+//     data.forEach(function(d) { 
+//        d.Amount = d.Amount;
+//        d.Date = d.date;
+//       });
+
+//      	console.log("#####",data);
+
+// data.sort(sortByDateAscending);
+
+//     function sortByDateAscending(a,b){
+//        return new Date(a.Date)-new Date(b.Date);
+//     		}
+
+// function tabulate(data, columns) {
+
+// 		d3.select("body").html("");
+// 		var table = d3.select('body').append('table')
+// 		var thead = table.append('thead')
+// 		var	tbody = table.append('tbody');
+
+// 		// append the header row
+// 		thead.append('tr')
+// 		  .selectAll('th')
+// 		  .data(columns).enter()
+// 		  .append('th')
+// 		  .text(function (column) { return column; });
+
+// 		var rows = tbody.selectAll('tr')
+// 		  .data(data)
+// 		  .enter()
+// 		  .append('tr');
+
+// 		// create a cell in each row for each column
+// 		var cells = rows.selectAll('td')
+// 		  .data(function (row) {
+// 		  	return columns.map(function (column) {
+// 		    return {column: column, value: row[column]};
+// 		    });
+
+// 			})
+// 		  .enter()
+// 		  .append('td')
+// 		  .text(function (d) { 
+//             return d.value; });
+// 		  	return table;
+// 		}
+// 	// render the table(s)
+	
+// 	tabulate(data, ['Date','Amount']);
+
+// });
+
+
+  });
+
+</script>
+<!-- <div id="abc"></div> -->
+</body>
+</html>
