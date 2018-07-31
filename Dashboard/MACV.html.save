@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MACV</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://localhost/Dashboardv1/Concentration/js/indiaMap.js"></script>          
+  <style>
+    body {
+      background-color: #e8e8e8;
+    }
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 550px}   
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }   
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+    li.active{
+    background-color: #000000 !important;
+     border-radius:5px 5px 5px 5px;
+    }
+    li a:hover{
+    background-color: #f0c413 !important;
+    }
+    
+  </style>
+</head>
+<body>
+	<script>
+	  function show_div(toShow)
+	  {
+	      hideAll();
+	      var show = document.getElementById(toShow);
+	      show.style.display = '';
+	  }
+    
+	  function hideAll()
+	  {
+
+	  	$('.active').removeClass("active1");
+
+	      var hideDiv1 = document.getElementById('SRIone');
+	      hideDiv1.style.display = 'none';
+	      var hideDiv2 = document.getElementById('SRITwo');
+	      hideDiv2.style.display = 'none';
+	      var hideDiv3 = document.getElementById('SRIThree');
+	      hideDiv3.style.display = 'none';
+
+	       var hideDiv4 = document.getElementById('Intro');
+	      hideDiv4.style.display = 'none';
+
+	      /*var hideDiv4 = document.getElementById('People');
+	      hideDiv4.style.display = 'none';
+	      var hideDiv5 = document.getElementById('Network');
+	      hideDiv5.style.display = 'none';
+	      var hideDiv6 = document.getElementById('Concentration');
+	      hideDiv6.style.display = 'none';*/
+	  }
+	</script>
+<header>
+  <nav class="navbar navbar-inverse">
+  	<div class="container-fluid" style="height: 100px;">
+    	<div class="navbar-header">
+      		<p style="display: inline;"><a class="navbar-brand" href="#"><img src="./log.png"></a></p>
+          <p style="padding-left: 1010px;display: inline;color: white;font-size:10px;position:absolute; top:40px;"><b>Powered by </b></p>
+          <p style="padding-left: 1080px;display: inline;position:absolute; top:20px;"><img src="./comp.png"></p>
+    	</div>
+      	<ul class="nav navbar-nav"></ul>
+  	</div>
+  </nav>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2">
+      	<div class="panel-heading" style="background-color: #f0c413">
+        	<h3 class="panel-title" style="font-weight: bold; font-size:18px;color: #737373;text-align: center;">DASHBOARD</h3>
+    	</div>
+      	<div class="panel-body well" style="height:960px;background-color: #333333;">
+	        <ul class="nav">
+
+	      <li class="active active1">
+          <a href="#Screen" onclick="show_div('SRIone');">
+          <p>
+          <img src="./SR.png">
+          <span style="font-weight: bold; font-size:15px;font-style:Verdana,sans-serif;color: #a6a6a6"> SR Insigh 1</span>
+          </p>
+          </a>
+          </li>
+
+          <li><p><span></span></span></p></li>
+
+          <li class="active">
+          <a href="#Screen" onclick="show_div('SRITwo');">
+          <p>
+          <img src="./SR.png">
+          <span style="font-weight: bold; font-size:15px;font-style:Verdana,sans-serif;color: #a6a6a6"> SR Insight 2 </span>
+          </p>
+          </a>
+          </li>
+          <li><p><span></span></span></p></li>
+
+          <li class="active">
+          <a href="#Screen" onclick="show_div('SRIThree');">
+          <p>
+          <img src="./SR.png">
+          <span style="font-weight: bold; font-size:15px;font-style:Verdana,sans-serif;color: #a6a6a6"> SR Insight 3</span>
+          </p>
+          </a>
+          </li>
+
+          
+
+	        </ul>
+      	</div>
+    </div>
+    <div class="col-sm-10">
+      <div style="display: none;" id="SRIone">
+        <iframe src="http://http://13.228.24.255/MACV/SalesRepInsight/SalesRepInsight.html" width="1040" height="1010" frameborder="0" scrolling="no" style="background-color:#e8e8e8">
+        </iframe> 
+      </div>
+      <div style="display: none;" id="SRITwo">
+        <iframe src="http://localhost/MACV/SalesRepInsightTwo/SalesRepInsightsTwo.html" width="1040" height="1010" frameborder="0" scrolling="no" style="background-color:#e8e8e8">
+        </iframe> 
+      </div>
+      <div style="display: none;" id="SRIThree">
+        <iframe src="http://localhost/MACV/SalesRepInsightThree/SalesRepInsightsThree.html" width="1040" height="1010" frameborder="0" scrolling="no" style="background-color:#e8e8e8">
+        </iframe> 
+      </div>
+      <!--
+       <div style="display: none;" id="Network">
+        <iframe src="http://localhost/Dashboardv1/Network/NetworkInsight.html" width="1040" height="830" frameborder="0" scrolling="no" style="background-color:#e8e8e8">
+        </iframe> 
+      </div>
+      <div style="display: none;" id="Concentration">
+        <iframe src="http://localhost/Dashboardv1/Concentration/Concentration.html" width="1040" height="830" frameborder="0" scrolling="no" style="background-color:#e8e8e8">
+        </iframe> 
+      </div>-->
+       <div id="Intro">
+       	<iframe src="http://localhost/MACV/SalesRepInsight/SalesRepInsight.html" width="1040" height="1010" frameborder="0" scrolling="no" style="background-color:#e8e8e8"></iframe> 
+       	
+      </div>
+      
+    </div>
+  </div>
+</div>
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key= AIzaSyAU7jfEzpDws8vOSYc_Uv7FkbAQykHTvE4&libraries=visualization&callback=initMap">
+</script>
+</body>
+</html>

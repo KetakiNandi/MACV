@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MACV</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://localhost/Dashboardv1/Concentration/js/indiaMap.js"></script>          
+  <style>
+   /* body {
+      background-color: #e8e8e8;
+    }
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    /*.row.content {height: 550px}   */
+    /* Set gray background color and 100% height */
+    /*.sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }  */ 
+    /* On small screens, set height to 'auto' for the grid */
+    /*@media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }*/
+    li.active{
+    background-color: #1aa0d9 !important;
+     border-right-style: solid ;
+     border-right-width: 1px;
+     border-right-color: white;
+     height:50px;
+    }
+
+    li a:focus {
+	  background: #00baa1 !important;
+	  
+	  outline: none;
+	  height:50px;
+	}
+    
+    li a:hover{
+    background-color: #ffcc00 !important;
+    
+    height:50px;
+    outline: none;
+    }
+    
+  </style>
+</head>
+<body>
+	<script>
+	  function show_div(toShow)
+	  {
+	      hideAll();
+	      var show = document.getElementById(toShow);
+	      show.style.display = '';
+	  }
+    
+	  function hideAll()
+	  {
+
+	  	$('.active').removeClass("active1");
+
+	      var hideDiv1 = document.getElementById('SRIone');
+	      hideDiv1.style.display = 'none';
+	      var hideDiv2 = document.getElementById('SRITwo');
+	      hideDiv2.style.display = 'none';
+	      var hideDiv3 = document.getElementById('SRIThree');
+	      hideDiv3.style.display = 'none';
+		var hideDiv5 = document.getElementById('SRIFour');
+          	hideDiv5.style.display = 'none';
+
+          
+	   
+	       var hideDiv4 = document.getElementById('Intro');
+	      hideDiv4.style.display = 'none';
+
+	      var hideDiv6 = document.getElementById('SRIFive');
+	      hideDiv6.style.display = 'none';
+	      var hideDiv7 = document.getElementById('SRISix');
+      		  hideDiv7.style.display = 'none';
+
+
+	      /*   
+	      var hideDiv5 = document.getElementById('Network');
+	      hideDiv5.style.display = 'none';
+	      var hideDiv6 = document.getElementById('Concentration');
+	      hideDiv6.style.display = 'none';*/
+	  }
+	</script>
+<!-- <header> -->
+  <!-- <nav class="navbar navbar-inverse"> -->
+  	<!-- <div class="container-fluid">
+  	   <div class="row" >
+    	<div class="col-sm-12">
+    	<ul class="nav navbar-nav">
+      		<p style="display: inline;top:10px;"><a class="navbar-brand" href="#"><img src="./log.png"></a></p>
+          <p style="padding-left: 1010px;display: inline;color: white;font-size:10px;position:absolute; top:20px;"><b>Powered by </b></p>
+          <p style="padding-left: 1080px;display: inline;position:absolute; top:20px;"><img src="./comp.png"></p>
+          </ul>
+    	</div>
+      </div>	
+  	</div> -->
+ <!--  </nav> -->
+<!-- </header> -->
+
+<div class="container-fluid">
+
+	<div class="row" >
+    	<div class="col-sm-12">
+    		<div class="panel panel-default">
+      			<div class="panel-body" style="background: linear-gradient(to right, #008fe2 , #00b29c);">
+        			<p style="display: inline;"><img src="./log.png"></p>
+         		    <p style="padding-left: 1010px;display: inline;color: white;font-size:10px;position:absolute; top:20px;"><b>Powered by </b></p>
+                    <p style="padding-left: 1080px;display: inline;position:absolute; top:20px;"><img src="./comp.png"></p>
+    			</div> 
+    		</div>
+      	</div>
+    </div>
+ 		
+
+  <div class="row" >
+    <div class="col-sm-12">
+
+       <ul class="nav navbar-nav">
+
+        <li class="active active1">
+          <a href="#Screen" onclick="show_div('SRIone');" >
+          <p style="display: inline-block;position: relative;">
+          <img src="./spr.png">
+          <span style="font-weight: bold; font-size:12px;font-style:Verdana,sans-serif;color: #ffffff;">Sales Performance</span>
+          </p>
+          </a>
+          </li>
+               
+       <li class="active">
+          <a href="#Screen" onclick="show_div('SRITwo');">
+          <p>
+          <img src="./SR.png">
+          <span style="font-weight: bold; font-size:12px;font-style:Verdana,sans-serif;color: #ffffff"> SR Insights </span>
+          </p>
+          </a>
+          </li>
+
+         <li class="active">
+          <a href="#Screen" onclick="show_div('SRIThree');">
+          <p>
+          <img src="./week.png">
+          <span style="font-weight: bold; font-size:12px;font-style:Verdana,sans-serif;color: #ffffff">Week Day, Weekend & Top Sales</span>
+          </p>
+          </a>
+          </li>
+
+         <li class="active">
+          <a href="#Screen" onclick="show_div('SRIFour');">
+          <p>
+          <img src="./kiosk.png">
+          <span style="font-weight: bold; font-size:12px;font-style:Verdana,sans-serif;color: #ffffff"> KIOSK Details</span>
+          </p>
+          </a>
+          </li>
+
+         <li class="active">
+          <a href="#Screen" onclick="show_div('SRIFive');">
+          <p>
+          <img src="./inv.png">
+          <span style="font-weight: bold; font-size:12px;font-style:Verdana,sans-serif;color: #ffffff"> Inventory</span>
+          </p>
+          </a>
+          </li>
+
+        <li class="active">
+          <a href="#Screen" onclick="show_div('SRISix');">
+          <p>
+          <img src="./Comparison.png">
+          <span style="font-weight: bold; font-size:12px;font-style:Verdana,sans-serif;color: #ffffff">M-O-M Comparison Charts</span>
+          </p>
+          </a>
+          </li>
+
+          <li class="active">
+          <a href="#Screen" onclick="show_div('SRISix1');">
+          <p>
+          <img src="./coming.png">
+          <span style="font-weight: bold; font-size:10px;font-style:Verdana,sans-serif;color: #ffffff">Upcoming Charts</span>
+          </p>
+          </a>
+          </li>
+
+          <li class="active">
+          <a href="#Screen" onclick="show_div('SRISix1');">
+          <p>
+          <img src="./coming.png">
+          <span style="font-weight: bold; font-size:10px;font-style:Verdana,sans-serif;color: #ffffff">Upcoming</span>
+          </p>
+          </a>
+          </li>
+
+      </ul>
+
+	</div>
+</div>
+
+    <div class="row" >
+    <div class="col-sm-12">
+    <div style="height: 20px;">
+        	<!-- <h3 class="panel-title" style="font-weight: bold; font-size:18px;color: #737373;text-align: center;">DASHBOARD</h3> -->
+    	</div>
+      <div style="display: none;" id="SRIone">
+        <iframe src="http://localhost:81/MACV/SalesRepInsight/SalesRepInsight.html" width="1260" height="760" frameborder="0" scrolling="no" style="background-color:#e8e8e8">
+        </iframe> 
+      </div>
+      <div style="display: none;" id="SRITwo">
+        <iframe src="http://localhost:81/MACV/SalesRepInsightTwo/SalesRepInsightsTwo.html" width="1260" height="890" frameborder="0" scrolling="no" style="background-color:#e8e8e8">
+        </iframe> 
+      </div>
+      <div style="display: none;" id="SRIThree">
+        <iframe src="http://localhost:81/MACV/SalesRepInsightThree/SalesRepInsightsThree.html" width="1260" height="750" frameborder="0" scrolling="no" style="background-color:#e8e8e8">
+        </iframe> 
+      </div>
+      
+       <div style="display: none;" id="SRIFour">
+        <iframe src="http://localhost:81/MACV/SalesRepInsightFour/SalesRepInsightsFour.html" width="1260" height="760" frameborder="0" scrolling="no" style="background-color:#e8e8e8">
+        </iframe> 
+      </div>
+
+       <div style="display: none;" id="SRIFive">
+        <iframe src="http://localhost:81/MACV/SalesRepInsightFourFive/SalesRepInsightFourFive.html" width="1260" height="1060" frameborder="0" scrolling="no" style="background-color:#e8e8e8">
+        </iframe> 
+      </div>
+
+
+	<div style="display: none;" id="SRISix">
+        <iframe src="http://localhost:81/MACV/SalesRepInsightSix/SalesRepInsightSix.html" width="1260" height="710" frameborder="0" scrolling="no" style="background-color:#e8e8e8">
+        </iframe> 
+      </div>
+
+
+      <!--<div style="display: none;" id="Concentration">
+        <iframe src="http://localhost/Dashboardv1/Concentration/Concentration.html" width="1040" height="830" frameborder="0" scrolling="no" style="background-color:#e8e8e8">
+        </iframe> 
+      </div>-->
+
+
+       <div id="Intro">
+       	<iframe src="http://localhost:81/MACV/SalesRepInsight/SalesRepInsight.html" width="1260" height="760" frameborder="0" scrolling="no" style="background-color:#e8e8e8"></iframe> 
+       	
+      </div>
+      
+    </div>
+  </div>
+<!-- </div> -->
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key= AIzaSyAU7jfEzpDws8vOSYc_Uv7FkbAQykHTvE4&libraries=visualization&callback=initMap">
+</script>
+</body>
+</html>

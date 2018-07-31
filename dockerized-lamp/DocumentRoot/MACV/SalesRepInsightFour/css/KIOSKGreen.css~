@@ -1,0 +1,40 @@
+#KIOSKGREEN table,#KIOSKGREEN th,#KIOSKGREEN td 
+        {
+            margin:5px 10px;
+            border:solid 1px #8e9499;
+            font:15px Verdana;	
+            table-layout: fixed;
+            width: 80%;
+            height:30px;
+            position:relative; 
+            text-align: center;
+	    margin-left:50px; 
+	    margin-top:10px;
+        }
+       #KIOSKGREEN th {
+            font:16px;
+            font-weight:bold;
+            background: #FFCC80;
+		 color: #80858a;
+            vertical-align:middle;
+            text-align: center !important;  
+
+
+        }
+        #KIOSKGREEN tr{
+        	font-weight:bold;
+  		    background-color:white;
+          
+        }
+
+    #KIOSKGREEN tr:nth-of-type(odd){
+       background-color: #b1de5d; 
+    }
+
+   #KIOSKGREEN tr:nth-of-type(even){
+       background-color: #b1de5d; 
+    }
+
+
+
+

@@ -1,0 +1,36 @@
+<?php //phpinfo();
+
+//$connection = new MongoDB\Driver\Manager("mongodb://127.0.0.1/");
+
+$mng                  = new MongoDB\Driver\Manager("mongodb://mongo:27017");
+
+//$mongoStartDate =  new \MongoDB\BSON\UTCDateTime($miliStartDate*1000);
+//$mongoEndDate =  new \MongoDB\BSON\UTCDateTime($miliEndDate*1000);
+//$datefilter=array('SnappyDate'=> array('$gte' => $mongoStartDate, '$lte' => $mongoEndDate));
+
+
+  $query                = new MongoDB\Driver\Query([]);
+  $rows                 = $mng->executeQuery("SaleRepInsight.SalesperformanceValue", $query);
+  $data                 = array();
+  $findCounter          = 0;
+  foreach ($rows as $row){
+   $milliseconds = $row->date->toDateTime();
+  for($i=0;$i<count($data);$i++){
+    if($data[$i]["SnappyDate"]==$milliseconds->format('d-M-y')){          
+      $findCounter    = 1;
+      $oldV           = $data[$i]["Duration"];
+      $data[$i]["Duration"]    = $oldV+$row->Amount;     
+      break;
+    }
+  }
+  if($findCounter==0){
+    $data[$i]     =  array("SnappyDate"=>($milliseconds->format('d-M-y')),"Duration"=>($row->Amount));
+  } else {
+    $findCounter  = 0;
+  }
+ }
+  array_walk_recursive($data, function (&$b) { $b = (string)$b; });
+  echo json_encode($data);
+
+
+ ?>

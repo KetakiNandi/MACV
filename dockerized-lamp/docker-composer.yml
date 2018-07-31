@@ -1,0 +1,23 @@
+version: '3'
+services:
+    db:
+    build:
+      context: ./db
+      args:
+        MYSQL_DATABASE: ReachOutDB 
+        MYSQL_ROOT_PASSWORD: admin
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: ReachOutDB 
+      MYSQL_ROOT_PASSWORD: admin
+
+    php-apache:
+        build:
+            context: ./php-apache
+	depends_on:
+      	    - db
+        ports:
+            -  80:80
+        volumes:
+            - ./DocumentRoot:/var/www/html

@@ -1,0 +1,48 @@
+aaa{
+font-size:25px;
+color:#ffffff;
+font-family:verdana;
+margin-left: 10px;
+border-bottom: 4px solid black;
+padding-bottom: 8px;
+border-color: #5dcfde;
+}
+
+#MACVState {
+  width: 1000px;
+  height: 30px;
+ white-space:nowrap
+}
+
+
+.outer{position:relative}
+.inner {
+  overflow-x:scroll;
+  overflow-y:visible; 
+  margin-left:612px;
+}
+
+.Mnet {
+  position: absolute;
+  top: 4px;
+  left: 525px;
+color:white;
+}
+
+#MACVCity {
+  width: 1000px;
+  height: 30px;
+ white-space:nowrap
+}
+.outer1{position:relative}
+.inner1 {
+  overflow-x:scroll;
+  overflow-y:visible; 
+  margin-left:612px;
+}
+.Mcity {
+  position: absolute;
+  top: 4px;
+  left: 525px;
+color:white;
+}

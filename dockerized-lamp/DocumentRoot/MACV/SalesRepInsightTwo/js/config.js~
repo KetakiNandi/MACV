@@ -1,0 +1,17 @@
+var host			=	'localhost';
+var dir				=	'MACV';
+
+var base_url		=	 'http://'+host+'/'+dir+'/';
+var pCategory       =    encodeURI(base_url+"SalesRepInsightTwo/data/Category.php");
+var pEmpId          =    encodeURI(base_url+"SalesRepInsightTwo/data/empID.php");
+var POSType         =    encodeURI(base_url+"SalesRepInsight/data/POSType.php");
+var pName           =    encodeURI(base_url+"SalesRepInsightTwo/data/promoName.php");
+var SPWCQ           =    encodeURI(base_url+"SalesRepInsightTwo/data/SalesPersonWiseContributionQuantity.php"); 
+var SPWCV           =    encodeURI(base_url+"SalesRepInsightTwo/data/SalesPersonWiseContributionValue.php");
+var pSsite          =    encodeURI(base_url+"SalesRepInsightTwo/data/SouceSite.php");
+var pState          =    encodeURI(base_url+"SalesRepInsightTwo/data/State.php");
+var targetlink      =    encodeURI(base_url+"SalesRepInsightTwo/data/Tachievement.php");
+var Cvalue          =    encodeURI(base_url+"SalesRepInsightTwo/data/SalesPersonWiseUpSellingQtn.php");
+var pZone           =    encodeURI(base_url+"SalesRepInsightTwo/data/Zone.php");
+var pCity           =    encodeURI(base_url+"SalesRepInsightTwo/data/city.php");
+var SAQPDLink       =    encodeURI(base_url+"SalesRepInsightTwo/data/saleAvgQtnPerDay.php");

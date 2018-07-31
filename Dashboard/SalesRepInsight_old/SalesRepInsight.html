@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"><title>MACV</title>
+       
+         <link rel="stylesheet" type="text/css" href="css/Common.css"/>
+         <link rel="stylesheet" type="text/css" href="css/Header.css"/>
+         <link rel="stylesheet" type="text/css" href="css/DivisionAndSection.css"/>
+         <link rel="stylesheet" type="text/css" href="css/Arevenue.css"/>
+         <link rel="stylesheet" type="text/css" href="css/Top10SellingItem.css"/>
+         <link rel="stylesheet" type="text/css" href="css/circle.css"/>
+         <link rel="stylesheet" type="text/css" href="css/Tachievement.css"/>
+         
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">	
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+       <!--  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script> -->
+        <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />	    
+	    <script src="http://colorbrewer2.org/export/colorbrewer.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+        <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+        
+        <script type="text/javascript" src="js/city.js"></script> 
+        <script type="text/javascript" src="js/Zone.js"></script>
+        <script type="text/javascript" src="js/State.js"></script>
+        <script type="text/javascript" src="js/Sourcesite.js"></script>
+        <script type="text/javascript" src="js/datePicker.js"></script>
+        <script type="text/javascript" src="js/PromoName.js"></script>
+        <script type="text/javascript" src="js/Category.js"></script>
+        <script type="text/javascript" src="js/EmpId.js"></script>
+
+        <script type="text/javascript" src="js/saleAvgSoldPerDay.js"></script>
+        <script type="text/javascript" src="js/Top10_selling_item.js"></script>
+        <script type="text/javascript" src="js/SalesPersonWiseContributionValue.js"></script>
+        <script type="text/javascript" src="js/SalesPersonWiseContributionQuantity.js"></script>
+        <script type="text/javascript" src="js/CategorywisePerformanceQuantity.js"></script>
+        <script type="text/javascript" src="js/SubCategorywisePerformanceQuantity.js"></script>
+        <script type="text/javascript" src="js/CustomerDetailsFilledZoom.js"></script>
+         <script type="text/javascript" src="js/CustomerDetailsFilled.js"></script>
+        <script type="text/javascript" src="js/SalesPerformanceValue.js"></script>
+        <script type="text/javascript" src="js/SalesPerformanceQtnQuarter.js"></script>
+        <script type="text/javascript" src="js/SalesPerformanceValueQuarter.js"></script>
+        <script type="text/javascript" src="js/SalesPerformanceQtn.js"></script>
+        <script type="text/javascript" src="js/Tachievement.js"></script>
+        <script type="text/javascript" src="js/UpSelling.js"></script>
+        <script type="text/javascript" src="js/POSType.js"></script>
+  </head>
+  <script>
+   var ClickFlag="0";
+   var ClickFlagV="2";
+ // console.log("@@@@",ClickFlag);
+ $(document).ready(function(){
+    $("#CDFZ1").click(function(){
+        //console.log("$$$$");
+        $("#CustDetails").modal('show');
+    });
+
+    // $("#CUTUM").click(function(){
+    //     //console.log("$$$$");
+    //     $("#PercentageM").modal('show');
+    // });
+
+    // $("#ANCPM").click(function(){
+    //     //console.log("$$$$");
+    //     $("#AvgNumberCommentsPostM").modal('show');
+    // });
+
+    //  $("#ACPU1").click(function(){
+    //     //console.log("$$$$");
+    //     $("#AvgCommentUserM1").modal('show');
+    // });
+
+    // $("#ANCPP1").click(function(){
+    //     //console.log("$$$$");
+    //     $("#AvgNumberCommentsPostM1").modal('show');
+    // });
+
+
+  });
+
+  </script>
+    <body> 
+    	<div class="container" style="width: 1010px;order-radius:5px 5px 5px 5px;">
+           <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-default text-left">
+                        <div class="panel-body" style="background-color: #5E696B;height: 80px;">
+                        <div>
+                            <!--<p style="display: inline;"><img src="./log.png"><b><aaa>Sales Rep Insights</aaa></b></p>
+                            <p style="padding-left: 590px;display: inline;color: white;font-size:10px"><b>Powered by </b></p>
+                            <p style="padding-left: 10px;display: inline;"><img src="./comp.png"></p>-->
+                            <p style="display: inline;"><b><aaa>Sales Rep Insights</aaa></b></p>
+                        </div>
+                        <div>
+                            <p style="font-size:15px;text-align:right;padding:1px;padding-right:20px "><input style="font-size:15px;color:white;background-color: #1f93ff;" type="text" id="reportrange"/><span>  </span><button type="button" id="saveBtn" class="btn btn-primary" data-dismiss="modal" style="font-size:11px;color:white;background-color: #1f93ff"><b>Apply</b></button></p></div>
+                       </div>
+                 </div>
+            </div>
+        </div>
+
+            <div class="row">
+       			<div class="col-sm-2">
+      				<div class="panel panel-default">
+      					<div class="panel-heading" style="background-color: #f0c413">
+        				<h3 class="panel-title" style="font-weight: bold; font-size:12px;text-align:center; color:#2e4d4d;font-family:'Open Sans'">Promo Name</h3>
+    					</div>
+              <div class="panel-body" id="MacDPRN" style="font-size:9px;height:100px;background-color: #708090;">
+            </div>
+             <p style="position: absolute;height:10px;"><button id="someButton6" style="position: absolute; left: 70px;bottom: 12px;background-color: #1f93ff;font-size:8px;font-weight: bold;color: black;">Select</button></p>
+    				</div>
+    			</div>
+          <div class="col-sm-2">
+              <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: #f0c413">
+                <h3 class="panel-title" style="font-weight: bold; font-size:12px;text-align:center; color:#2e4d4d;font-family:'Open Sans'">Category</h3>
+              </div>
+              <div class="panel-body" id="MacDPG" style="font-size:9px;height:100px;background-color: #708090;">
+            </div>
+            <p style="position: absolute;height:10px;"><button id="someButton5" style="position: absolute; left: 70px;bottom: 12px;background-color: #1f93ff;font-size:8px;font-weight: bold;color: black;">Select</button></p>
+            </div>
+          </div>
+    			<div class="col-sm-1">
+      				<div class="panel panel-default">
+      					<div class="panel-heading" style="background-color: #f0c413">
+        				<h3 class="panel-title" style="font-weight: bold; font-size:12px;text-align:center; text-align:center; color:#2e4d4d;font-family:'Open Sans'">Zone</h3>
+    					</div>
+              <div class="panel-body" id="MacDZ" style="font-size:9px;height:100px;background-color: #708090;">
+             </div>
+             <p style="position: absolute;height:10px;"><button id="someButton" style="position: absolute; left: 25px;bottom: 12px;background-color: #1f93ff;font-size:8px;color:black;font-weight: bold;">Select</button></p>
+    				</div>
+    			</div>
+    			<div class="col-sm-2">
+      				<div class="panel panel-default">
+      					<div class="panel-heading" style="background-color: #f0c413">
+        				<h3 class="panel-title" style="font-weight: bold; font-size:12px; text-align:center; color:#2e4d4d;font-family:'Open Sans'">State</h3>
+    					</div>
+             <div class="panel-body" id="MacDS" style="font-size:9px;height:100px;background-color: #708090;">
+            <!--  <select multiple id="MacDS" style="width:100px;">
+            </select> -->
+            </div>
+            <p style="position: absolute;height:10px;"><button id="someButton1" style="position: absolute; left: 80px;bottom: 12px;background-color: #1f93ff;font-size:8px;font-weight: bold;color: black;">Select</button></p>
+    				</div>
+    			</div>
+    			<div class="col-sm-2">
+      				<div class="panel panel-default">
+      					<div class="panel-heading" style="background-color: #f0c413">
+        				<h3 class="panel-title" style="font-weight: bold; font-size:12px;text-align:center; color:#2e4d4d;font-family:'Open Sans'">City</h3>
+    					</div>
+             <div class="panel-body" id="MacDC" style="font-size:9px;height:100px;background-color: #708090;">
+            </div>
+            <p style="position: absolute;height:10px;"><button id="someButton2" style="position: absolute; left: 80px;bottom: 12px;background-color: #1f93ff;font-size:8px;font-weight: bold;color: black;">Select</button></p>
+    				</div>
+    			</div>
+          <div class="col-sm-1">
+              <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: #f0c413">
+                <h3 class="panel-title" style="font-weight: bold; font-size:12px;text-align:center; text-align:center; color:#2e4d4d;font-family:'Open Sans'">PoS Type</h3>
+              </div>
+              <div class="panel-body" id="MacPT1" style="font-size:9px;height:100px;background-color: #708090;">
+             </div>
+             <p style="position: absolute;height:10px;"><input type="button" id="someButton3" style="position: absolute; left: 25px;bottom: 12px;background-color: #1f93ff;font-size:8px;font-weight: bold;color: black;" value="Select"/></p>
+            </div>
+          </div>
+    			<div class="col-sm-2">
+      				<div class="panel panel-default">
+      					<div class="panel-heading" style="background-color: #f0c413">
+        				<h3 class="panel-title" style="font-weight: bold; font-size:12px;text-align:center; color:#2e4d4d;font-family:'Open Sans'">Source Site</h3>
+    					</div>
+              <div class="panel-body" id="MacDPN" style="font-size:9px;height:100px;background-color: #708090;">
+           </div>
+           <p style="position: absolute;height:10px;"><button id="someButton4" style="position: absolute; left: 70px;bottom: 12px;background-color: #1f93ff;font-size:8px;font-weight: bold;color: black;">Select</button></p>
+    				</div>
+    			</div>
+    		</div>  
+
+     		<div class="row">
+       			<div class="col-sm-2">
+      				<div class="panel panel-default">
+      					<div class="panel-heading" style="background-color: #f0c413">
+        				<h3 class="panel-title" style="font-weight: bold; font-size:12px;text-align:center;color:#2e4d4d;font-family:'Open Sans'">Sales Rep Name</h3>
+    					  </div>
+                <div class="panel-body" id="MacDEid" style="font-size:9px;height:250px;overflow: scroll;background-color: #708090;">
+                </div>
+              </div>   				
+    			</div>
+    			<div class="col-sm-4">
+      				<div class="panel panel-default">
+      					<div class="panel-heading" style="background-color: #f0c413">
+        				<h3 class="panel-title" style="font-weight: bold; font-size:12px;text-align:left;color:#2e4d4d;font-family:'Open Sans'">Sales Performance-Value</h3>
+                <p style="position: absolute;height:10px;"><input style="position: absolute; left: 160px;bottom: 7px;background-color: #5e696b;font-size:9px;font-weight: bold;color: white;border-radius: 4px;" type="button" value="Drill Up" id="SPV1"/></p>
+                <p style="position: absolute;height:10px;"><input style="position: absolute; left: 215px;bottom: 7px;background-color: #5e696b;font-size:9px;font-weight: bold;color: white;border-radius: 4px;" type="button" value="Drill Down" id="SPV2"/></p>
+    					 </div>
+              <div class="panel-body" id="SPV" style="font-size:9px;height:250px;overflow: scroll;background-color: #708090;">
+             </div>
+    				</div> 
+          </div>
+            <div class="col-sm-4">
+              <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: #f0c413">
+                <h3 class="panel-title" style="font-weight: bold; font-size:12px;text-align:left;color:#2e4d4d;font-family:'Open Sans'">Sales Performance-Qtn</h3>
+                <p style="position: absolute;height:10px;"><input style="position: absolute; left: 160px;bottom: 7px;background-color: #5e696b;font-size:9px;font-weight: bold;color: white;border-radius: 4px;" type="button" btnType="date1" value="Drill Up" id="SPQ1"/></p>
+                <p style="position: absolute;height:10px;"><input style="position: absolute; left: 215px;bottom: 7px;background-color: #5e696b;font-size:9px;font-weight: bold;color: white;border-radius: 4px;" type="button" btnType="date2" value="Drill Down" id="SPQ2"/></p>
+                <p style="position: absolute;height:10px;"><button type="button" style="position: absolute; left: 280px;bottom: 7px;background-color: #5e696b;font-size:9px;font-weight: bold;color: white;border-radius: 4px;" id="CDFZ11">ZOOM</button></p>
+               </div>
+              <div class="panel-body" id="SPQ" style="font-size:9px;height:250px;overflow: scroll;background-color: #708090;">                      
+             </div>
+             
+
+            </div> 
+          </div>
+          <div class="col-sm-2">
+              <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: #f0c413">
+                <h3 class="panel-title" style="font-weight: bold; font-size:11px;text-align:left;color:#2e4d4d;font-family:'Open Sans'">Customer Details Filled</h3>
+                <p style="position: absolute;height:10px;"><button type="button" style="position: absolute; left: 113px;bottom: 7px;background-color: #5e696b;font-size:8px;font-weight: bold;color: white;border-radius: 4px;" id="CDFZ1">ZOOM</button></p>
+               </div>
+              <div class="panel-body" id="CDF" style="font-size:9px;height:250px;overflow: scroll;background-color: #708090;">
+             </div>
+            </div> 
+          </div>
+
+           <!-- Modal -->
+          <div class="modal fade" id="CustDetails" role="dialog" >
+            <div class="modal-dialog modal-lg" style="width:900px;">
+            
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header" style="font-weight: bold; font-size:14px;color:#2e4d4d;background-color: #f0c413">
+                  <h4 class="modal-title" >Customer Details Filled</h4>
+                </div>
+                <div class="modal-body" style="height:500px;">
+                <div id="CDFZ" style="font-size:9px;background-color: #5e696b;">
+                </div>
+                </div>
+                <div class="modal-footer" style="padding-right: 400px;background-color: #f0c413;">
+                  <button type="button" class="btn btn-default" data-dismiss="modal" style="font-weight: bold; font-size:14px;color:white;background-color: #5e696b;">Close</button>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+            
+</div>
+<!---//-->
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: #f0c413">
+                <h3 class="panel-title" style="font-weight: bold; font-size:12px;text-align:center;color:#2e4d4d;font-family:'Open Sans'">SubCat Wise Perf-Qtn</h3>
+               </div>
+              <div class="panel-body" id="SCPQ" style="font-size:9px;height:250px;overflow: scroll;background-color: #708090;">
+             </div>
+            </div> 
+          </div>
+            <div class="col-sm-6">
+              <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: #f0c413">
+                <h3 class="panel-title" style="font-weight: bold; font-size:12px;text-align:center;color:#2e4d4d;font-family:'Open Sans'">Cat Wise Perf-Qtn</h3>
+               </div>
+              <div class="panel-body" id="NZEI" style="font-size:9px;height:250px;overflow: scroll;background-color: #708090;">
+             </div>
+            </div> 
+          </div>
+        </div>
+
+        <div class="row">
+           
+          <div class="col-sm-6">
+              <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: #f0c413">
+                <h3 class="panel-title" style="font-weight: bold; font-size:12px;text-align:center;color:#2e4d4d;font-family:'Open Sans'">Sales-Avg Qtn Sold/Day</h3>
+               </div>
+              <div class="panel-body" id="SAQP" style="font-size:9px;height:230px;overflow: scroll;background-color: #708090;">
+             </div>
+            </div> 
+          </div>
+
+          <div class="col-sm-6">
+              <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: #f0c413">
+                <h3 class="panel-title" style="font-weight: bold; font-size:12px;text-align:center;color:#2e4d4d;font-family:'Open Sans'">SR Wise Upselling-Qtn</h3>
+               </div>
+              <div class="panel-body" id="SPUSQ" style="font-size:9px;height:230px;overflow: scroll;background-color: #708090;">
+             </div>
+            </div> 
+          </div>
+      </div>
+            <div class="row">
+            <div class="col-sm-6">
+              <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: #f0c413">
+                <h3 class="panel-title" style="font-weight: bold; font-size:12px;text-align:center;color:#2e4d4d;font-family:'Open Sans'">SR Wise Contrib-value</h3>
+               </div>
+              <div class="panel-body" id="SPWCV" style="font-size:9px;height:230px;overflow: scroll;background-color: #708090;">
+             </div>
+            </div> 
+          </div>
+          <div class="col-sm-6">
+              <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: #f0c413">
+                <h3 class="panel-title" style="font-weight: bold; font-size:12px;text-align:center;color:#2e4d4d;font-family:'Open Sans'">SR Wise Contrib-Qtn</h3>
+               </div>
+              <div class="panel-body" id="SPWCQ" style="font-size:9px;height:230px;overflow: scroll;background-color: #708090;">
+             </div>
+            </div> 
+          </div>
+      </div>
+
+        <div class="row">
+            <div class="col-sm-8">
+              <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: #f0c413">
+                <h3 class="panel-title" style="font-weight: bold; font-size:12px;text-align:center;color:#2e4d4d;font-family:'Open Sans'">PoS Target Achievements</h3>
+                </div>
+                <div class="panel-body" id="TA" style="font-size:9px;height:250px;overflow: scroll;background-color: #708090;">
+                </div>
+              </div>         
+          </div>
+            <div class="col-sm-4">
+              <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: #f0c413">
+                <h3 class="panel-title" style="font-weight: bold; font-size:12px;text-align:center;color:#2e4d4d;font-family:'Open Sans'">Top 10 Selling Items-Qtn</h3>
+               </div>
+              <div class="panel-body" id="TopS" style="font-size:9px;height:250px;overflow: scroll;background-color: #708090;">
+             </div>
+            </div> 
+          </div>
+        </div>
+    </div>
+    <div id="infotip" class="hidden">
+       <p><span id="heading"></span></p>
+       <p><span id="percentage"></span></p>
+       <p><span id="PoSName"></span></p>
+        <p><span id="SourceSite"></span></p>
+       </div>
+	</body>
+</html>

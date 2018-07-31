@@ -1,0 +1,40 @@
+#KIOSKRED table,#KIOSKRED th,#KIOSKRED td 
+        {
+            margin:5px 10px;
+            border:solid 1px #8e9499;
+            font:15px Verdana;	
+            table-layout: fixed;
+            width: 80%;
+            height:30px;
+            position:relative; 
+            text-align: center;
+	    margin-left:50px; 
+	    margin-top:10px;
+        }
+       #KIOSKRED th {
+            font:16px;
+            font-weight:bold;
+            background: white;
+		 color: #80858a;
+            vertical-align:middle;
+            text-align: center !important;  
+
+
+        }
+        #KIOSKRED tr{
+        	font-weight:bold;
+  		    background-color:white;
+          
+        }
+
+    #KIOSKRED tr:nth-of-type(odd){
+       background-color: Green; 
+    }
+
+   #KIOSKRED tr:nth-of-type(even){
+       background-color: Green; 
+    }
+
+
+
+

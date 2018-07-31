@@ -1,0 +1,13 @@
+var host 			= 	'localhost';
+var pCategory       =    encodeURI("http://"+host+"/MACV/SalesRepInsightFour/data/Category.php");
+//var pEmpId          =    encodeURI("http://"+host+"/MACV/SalesRepInsightFour/data/empID.php");
+var POSType         =    encodeURI("http://"+host+"/MACV/SalesRepInsightFour/data/POSType.php");
+//var pName           =    encodeURI("http://"+host+"/MACV/SalesRepInsightFour/data/promoName.php");
+var kioskcounturl   =    encodeURI("http://"+host+"/MACV/SalesRepInsightFour/data/KIOSKCount.php");
+var kioskamturl     =    encodeURI("http://"+host+"/MACV/SalesRepInsightFour/data/KIOSKTotalAmount.php"); 
+var pSsite          =    encodeURI("http://"+host+"/MACV/SalesRepInsightFour/data/SouceSite.php");
+var pState          =    encodeURI("http://"+host+"/MACV/SalesRepInsightFour/data/State.php");
+var pZone           =    encodeURI("http://"+host+"/MACV/SalesRepInsightFour/data/Zone.php");
+var pCity           =    encodeURI("http://"+host+"/MACV/SalesRepInsightFour/data/city.php");
+var dtopdown        =    encodeURI("http://"+host+"/MACV/SalesRepInsightFour/data/consecutive3DaySaleZero.php");
+

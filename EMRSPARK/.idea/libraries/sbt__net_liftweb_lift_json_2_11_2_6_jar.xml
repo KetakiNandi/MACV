@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: net.liftweb:lift-json_2.11:2.6:jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib_managed/jars/net.liftweb/lift-json_2.11/lift-json_2.11-2.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib_managed/srcs/net.liftweb/lift-json_2.11/lift-json_2.11-2.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,44 @@
+body { font: 12px Arial;}
+
+path { 
+    stroke: #59bfcf;
+    stroke-width: 2;
+    fill: none;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+   
+    
+}
+
+.axis text{
+  fill: #8e9499;
+  font: 12px sans-serif;
+   font-weight: bold;
+} 
+
+.linecolor{
+
+    stroke: #59bfcf;
+}
+
+.linecolor1{
+
+    stroke: #1062e8;
+}
+
+.linecolor2{
+
+    stroke: #A43741;
+}
+
+.box{
+  display: inline;
+  justify-content: center;
+  align-content: center;
+  align-items:center;
+  border:1px solid #e3f2fd;
+}
+

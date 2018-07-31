@@ -1,0 +1,17 @@
+<!--<?php phpinfo(); ?>-->
+
+<?php
+$servername = "127.0.0.1";
+$username = "root";
+$password = "admin";
+$db = "ReachOutDB";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if (mysqli_connect_errno()) {
+    die("Connection failed: " . $conn-> mysqli_connect_error());
+}
+echo "Connected successfully";
+?>

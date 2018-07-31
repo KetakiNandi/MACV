@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: software.amazon.ion:ion-java:1.0.1:jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib_managed/jars/software.amazon.ion/ion-java/ion-java-1.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib_managed/srcs/software.amazon.ion/ion-java/ion-java-1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
