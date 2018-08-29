@@ -70,9 +70,9 @@ object DateZoneEmpIdWiseSalesAVGQtnSoldPerDay {
 
       val newDocs = Seq(new Document("TimeStamp",today).append("date",new Date(df.parse(rdd._1).getTime)).append("Zone",rdd._6).append("SalesRepNameid",rdd._2).append("SalesRepName",rdd._3).append("SourceSite",rdd._4).append("PosCode",rdd._5).append("Quantity",rdd._7))
 
-     // MongoSpark.save(sc.parallelize(newDocs))
+      MongoSpark.save(sc.parallelize(newDocs))
 
-      println(newDocs)
+     // println(newDocs)
 
     })
   }

@@ -13,9 +13,6 @@ import scala.util.Try
 
 object DateWisePosTypeWiseCategorywisePerformanceQtn {
 
-
-
-
   def extractData(line: String)
   = {
     val fields = line.split(",")

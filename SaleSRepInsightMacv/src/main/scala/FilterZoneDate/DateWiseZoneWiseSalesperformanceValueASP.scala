@@ -72,13 +72,19 @@ object DateWiseZoneWiseSalesperformanceValueASP {
     val addQuantityDayWise = removeAmountValueZero.map(s=>(s._1+"#"+s._2,s._4.toInt)).reduceByKey(_+_)
 
     val JoinTwoCollections = SumProductAmountAndQuantity.join(addQuantityDayWise).map(s=>(s._1.split("#")(0),s._1.split("#")(1),s._2._1,s._2._2))
-//
-//   val a =JoinTwoCollections.map(s=>(s._1.substring(3,5).toInt,s._2,s._3,s._4)).filter(s=>(s._1==1))
+/*
+    //test
+    val a =JoinTwoCollections.map(s=>(s._1.substring(3,5).toInt,s._2,s._3,s._4)).filter(s=>(s._1==1))
+
+    val b=a.map(s=>(s._2,s._3,s._4)).filter(s=>(s._1=="West"))
+    val c=b.map(s=>(s._1,s._3.toInt)).reduceByKey(_+_)
 //    val b=a.map(s=>(s._2,s._4.toInt)).reduceByKey(_+_)
 //
-//    b.foreach(println)
+    c.foreach(println)
 
+*/
 
+   // a.foreach(println)
     val finalResult = JoinTwoCollections.collect()
 
 

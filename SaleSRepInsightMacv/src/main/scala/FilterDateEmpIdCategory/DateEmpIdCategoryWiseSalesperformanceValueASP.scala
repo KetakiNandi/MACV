@@ -63,7 +63,7 @@ object DateEmpIdCategoryWiseSalesperformanceValueASP {
 
     val removeAmountValueZero = replacedata.map(s=>(s._1+"#"+s._3+"#"+s._4+"#"+s._5,red(s._2,s._6))).reduceByKey(_+_)
 
-    val CountAmountperDate = replacedata.map(s=>(s._1+"#"+s._3+"#"+s._4+"#"+s._5,s._6.toInt))
+    val CountAmountperDate = replacedata.map(s=>(s._1+"#"+s._3+"#"+s._4+"#"+s._5,s._6.toInt)).reduceByKey(_+_)
 
     //CountAmountperDate.foreach(println)
 

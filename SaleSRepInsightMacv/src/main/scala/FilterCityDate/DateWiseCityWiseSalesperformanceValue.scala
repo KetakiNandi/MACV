@@ -40,6 +40,9 @@ object DateWiseCityWiseSalesperformanceValue {
 
     val SaleRepdata = sc.textFile("../SalesDetails17.csv")
 
+   // val SaleRepdata = sc.textFile("../SalesDetails17._18.csv")//Test 18Data
+
+
     val header = SaleRepdata.first() //extract header.It will be removed during streaming(42 and 44 line)
 
     val SaleRepdataWithoutHeader = SaleRepdata.filter(row => row != header)
@@ -53,6 +56,17 @@ object DateWiseCityWiseSalesperformanceValue {
     val checkyear17 = TotalFilter.map(s=>(s._1,s._1.toString.substring(6,10),s._2,s._3)).map(s=>(s._1+"@"+s._3+"@"+s._4,if(s._2=="2016") {"0"} else ("1"))).filter(s=>(s._2!="0")).map(s=>(s._1.split("@")(0),s._1.split("@")(1),s._1.split("@")(2)))
 
     val TotalFiltercount=checkyear17.map(s=>(s._1+"@"+s._3,s._2.toInt)).reduceByKey(_+_)
+
+
+//      // Test
+//        val a =TotalFiltercount.map(s=>(s._1.split("@")(0).substring(3,5).toInt,s._1.split("@")(1),s._2.toInt)).filter(s=>(s._1==1))
+//
+//        val b =a.map(s=>(s._2,s._3)).filter(s=>(s._1=="Kochi"))
+//
+//        val c =b.map(s=>(s._1,s._2.toInt)).reduceByKey(_+_)
+//
+//        c.foreach(println)
+
 
     //TotalFiltercount.foreach(println)
     val finalResult=TotalFiltercount.map(s=>(s._1.split("@")(0),s._1.split("@")(1),s._2))

@@ -69,7 +69,7 @@ object DateWiseCategoryPromoPostypeWiseSubCategorywisePerormanceQtn {
 
     results.foreach({ rdd =>
 
-      val newDocs = Seq(new Document("TimeStamp",today).append("date",new Date(df.parse(rdd._1).getTime)).append("SubCategory",rdd._2).append("PosType",rdd._3).append("Category",rdd._4).append("PromoNo",rdd._5).append("PromoName",rdd._6).append("Count",rdd._7))
+      val newDocs = Seq(new Document("TimeStamp",today).append("date",new Date(df.parse(rdd._1).getTime)).append("SubCategory",rdd._2).append("PosType",rdd._3).append("Category",rdd._4).append("PromoNo",rdd._5).append("PromoName",rdd._6).append("Quantity",rdd._7))
 
        MongoSpark.save(sc.parallelize(newDocs))
 

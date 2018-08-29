@@ -77,7 +77,7 @@ object DateWiseStateWisePoSTargetAchievement {
 
       val newDocs = Seq(new Document("TimeStamp",today).append("date",new Date(df.parse(rdd._2).getTime)).append("SourceSite",rdd._1).append("Actual",rdd._4).append("State",rdd._3))
 
-     // MongoSpark.save(sc.parallelize(newDocs))
+      MongoSpark.save(sc.parallelize(newDocs))
 
        //println(newDocs)
 

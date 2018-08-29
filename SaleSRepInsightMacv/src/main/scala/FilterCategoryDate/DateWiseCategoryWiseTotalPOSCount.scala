@@ -53,7 +53,21 @@ object DateWiseCategoryWiseTotalPOSCount {
 
     val FilterAmount = TotalFilter.map(s=>(s._1,s._2,s._3)).map(s=>(s._2+"@"+s._1+"@"+s._3)).distinct().map(s=>(s,1)).map(s=>(s._1.split("@")(0),s._1.split("@")(1),s._1.split("@")(2),s._2))
 
-    val results = FilterAmount.collect()
+    //test
+
+   /* val a= FilterAmount.map(s=>(s._1,s._2,s._3,s._4,s._1.substring(3,5).toInt)).filter(s=>(s._5==1))
+
+    val b=a.map(s=>(s._2,s._3,s._4)).filter(s=>(s._2=="Perfumes"))
+
+    val c=b.map(s=>(s._1,s._2)).map(s=>(s._1)).distinct().map(s=>(s,1)).reduceByKey(_+_)
+
+    println("dddddddddddddddd",c.count())
+
+   // val b=a.map(s=>(s._4,s._4.toInt)).reduceByKey(_+_)
+
+*/
+
+   val results = FilterAmount.collect()
 
     val today = Calendar.getInstance.getTime
 

@@ -51,7 +51,14 @@ object CategoryWiseSalesPerformanceValue {
     val TotalFilter = mappedSaleRepdata.filter(s=> !s._1.isEmpty && !s._2.isEmpty && !s._3.isEmpty)
 
     val checkyear17 = TotalFilter.map(s=>(s._1+"@"+s._3,s._2.toInt)).reduceByKey(_+_).map(s=>(s._1.split("@")(1),s._1.split("@")(0),s._2))//date,zone,amount
-    checkyear17.foreach(println)
+
+    //checkyear17.foreach(println)
+
+    //Test
+
+    //val a=checkyear17.map(s=>(s._1.substring(3,5),))
+
+
 
     val results = checkyear17.collect()
 

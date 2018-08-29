@@ -71,11 +71,11 @@ object consecutive3DaySaleZero {
 
     val checkyear17 = TotalFilter.map(s=>(s._1,s._2,s._3,s._4.toInt,s._5)).filter(s=>(s._4==0)).distinct()//.sortBy(x=>x._1,true,1)
 
-    val finalResult =checkyear17.map(s=>(s._1,s._2,s._3,s._5)).sortBy(x=>x._1,true,1)
+   // val finalResult =checkyear17.map(s=>(s._1,s._2,s._3,s._5)).sortBy(x=>x._1,true,1)
 
-    //checkyear17.foreach(println)
+    checkyear17.foreach(println)
 
-    val results = finalResult.collect()
+   /* val results = finalResult.collect()
 
     val today = Calendar.getInstance.getTime
 
@@ -89,7 +89,7 @@ object consecutive3DaySaleZero {
 
      // println(newDocs)
 
-    })
+    })*/
   }
 
 

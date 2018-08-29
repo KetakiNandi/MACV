@@ -62,11 +62,11 @@ object DateZoneWiseCatWisePOSTypeWiseKIOSKAvgSale {
 
     results.foreach({ rdd =>
 
-      val newDocs = Seq(new Document("TimeStamp",today).append("date",new Date(df.parse(rdd._2).getTime)).append("PosCode",rdd._1).append("SourceSite",rdd._3).append("Zone",rdd._4).append("Category",rdd._7).append("PosType",rdd._6).append("Amount",rdd._7))
+      val newDocs = Seq(new Document("TimeStamp",today).append("date",new Date(df.parse(rdd._2).getTime)).append("PosCode",rdd._1).append("SourceSite",rdd._3).append("Zone",rdd._4).append("Category",rdd._5).append("PosType",rdd._6).append("Amount",rdd._7))
 
        MongoSpark.save(sc.parallelize(newDocs))
 
-       // println(newDocs)
+      //  println(newDocs)
 
     })
   }

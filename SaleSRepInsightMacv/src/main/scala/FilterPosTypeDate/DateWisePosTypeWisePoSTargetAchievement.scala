@@ -37,10 +37,6 @@ object DateWisePosTypeWisePoSTargetAchievement {
       .config("fs.file.impl", classOf[org.apache.hadoop.fs.LocalFileSystem].getName)
       .getOrCreate()
 
-
-
-
-
     val SaleRepdata = sc.textFile("../SalesDetails17.csv")
 
     val header = SaleRepdata.first() //extract header.It will be removed during streaming(42 and 44 line)

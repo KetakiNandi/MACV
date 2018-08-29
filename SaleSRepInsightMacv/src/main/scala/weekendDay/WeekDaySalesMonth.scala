@@ -44,8 +44,6 @@ object WeekDaySalesMonth {
 
     val Dff = spark.read.mongo(readConfig)
 
-
-
     val SaleRepdata = sc.textFile("../SalesDetails17.csv")
 
     val header = SaleRepdata.first() //extract header.It will be removed during streaming(42 and 44 line)
@@ -83,13 +81,15 @@ object WeekDaySalesMonth {
 
     val finalResult = convertMonth.map(s=>(s._1+"#"+s._3,s._2.toInt)).reduceByKey(_+_).map(s=>(s._1.split("#")(0),s._1.split("#")(1),s._2))
 
+    finalResult.foreach(println)
+
     //test
    // finalResult.foreach(println)
-      val sdd =finalResult.map(s=>(s._1,s._2,s._3)).filter(s=>(s._1=="Jan")).map(s=>(s._1,s._3.toInt)).reduceByKey(_+_)
+     // val sdd =finalResult.map(s=>(s._1,s._2,s._3)).filter(s=>(s._1=="Jan")).map(s=>(s._1,s._3.toInt)).reduceByKey(_+_)
 
-     sdd.foreach(println)
+     //sdd.foreach(println)
 
- /* val results = finalResult.collect()
+  val results = finalResult.collect()
 
     val today = Calendar.getInstance.getTime
 
@@ -102,7 +102,7 @@ object WeekDaySalesMonth {
        MongoSpark.save(sc.parallelize(newDocs))
 
      // println(newDocs)
-    })*/
+    })
   }
 
 }

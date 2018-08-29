@@ -4,6 +4,7 @@ import java.sql.Date
 import java.text.SimpleDateFormat
 import java.util.Calendar
 
+import com.mongodb.spark.MongoSpark
 import org.apache.spark.SparkContext
 import org.apache.spark.sql.SparkSession
 import org.bson.Document
@@ -55,17 +56,19 @@ object DateCityWiseCatWisePOSTypeWiseKIOSKAvgSale {
 
     val results = SumOfAmount.collect()
 
-    val today = Calendar.getInstance.getTime
+    //results.foreach(println)
+
+   val today = Calendar.getInstance.getTime
 
     val df = new SimpleDateFormat("dd-MM-yyyy")
 
     results.foreach({ rdd =>
 
-      val newDocs = Seq(new Document("TimeStamp",today).append("date",new Date(df.parse(rdd._2).getTime)).append("PosCode",rdd._1).append("SourceSite",rdd._3).append("City",rdd._4).append("Category",rdd._7).append("PosType",rdd._6).append("Amount",rdd._7))
+      val newDocs = Seq(new Document("TimeStamp",today).append("date",new Date(df.parse(rdd._2).getTime)).append("PosCode",rdd._1).append("SourceSite",rdd._3).append("City",rdd._4).append("Category",rdd._5).append("PosType",rdd._6).append("Amount",rdd._7))
 
-      //  MongoSpark.save(sc.parallelize(newDocs))
+       MongoSpark.save(sc.parallelize(newDocs))
 
-      println(newDocs)
+     // println(newDocs)
 
     })
   }
